@@ -17,7 +17,7 @@ public class BirdMove : MonoBehaviour {
     public bool trigger;
     public bool moved = false;
     Warp warper;
-    GameObject door;
+    DoorOpen doorOpen;
 
     // Use this for initialization
     void Start () {
@@ -31,6 +31,7 @@ public class BirdMove : MonoBehaviour {
         canvTog = GameObject.FindGameObjectWithTag("belowMsg").GetComponent<CanvasToggle>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         warper = GameObject.FindGameObjectWithTag("door").GetComponent<Warp>();
+        doorOpen = GameObject.FindGameObjectWithTag("dooropen").GetComponent<DoorOpen>();
     }
 	
 	// Update is called once per frame
@@ -47,7 +48,7 @@ public class BirdMove : MonoBehaviour {
             ptext.text = "A drone modelled to resemble a bird is hovering; the metal beak has a weird shape to it. It's quite high up. \n[ Space ] Continue";
         }
 
-        else if ((trigger) && (Input.GetKeyDown(KeyCode.K)) && (canvTog.remote.isOwned == true) && (canvTog.remoteWorking == false)) {
+        else if ((trigger) && (Input.GetKeyDown(KeyCode.K)) && (canvTog.remote.isOwned == true) && (canvTog.remoteWorking == false) && (doorOpen.unlocked == false)) {
             canvTog.Show();
             ptext.text = "You try using the remote control near the 'bird'. Nothing happens. \n[ Space ] Continue";
         }
