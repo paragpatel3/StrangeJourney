@@ -15,6 +15,7 @@ public class BirdMove : MonoBehaviour {
     Image img;
     public PlayerMovement player;
     public bool trigger;
+    public bool moved = false;
     Warp warper;
     GameObject door;
 
@@ -51,9 +52,10 @@ public class BirdMove : MonoBehaviour {
             ptext.text = "You try using the remote control near the 'bird'. Nothing happens. \n[ Space ] Continue";
         }
 
-        else if ((trigger) && (Input.GetKeyDown(KeyCode.K)) && (canvTog.remote.isOwned == true) && (canvTog.remoteWorking == true)) { 
+        else if ((trigger) && (Input.GetKeyDown(KeyCode.K)) && (canvTog.remote.isOwned == true) && (canvTog.remoteWorking == true) && (moved != true)) { 
             canvTog.Show();
             ptext.text = "You press the button on the remote. The bird starts moving towards the door across the room.";
+            moved = true;
             ok = true;
         }
 

@@ -36,6 +36,7 @@ public class CanvasToggle : MonoBehaviour {
     public string combineList1;
     public string combineList2;
     public string combination;
+    BirdMove bird;
     //
     public string firstitem, seconditem;
     public string password;
@@ -90,6 +91,7 @@ public class CanvasToggle : MonoBehaviour {
         alpha = panel.GetAlpha();
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         forceField = GameObject.FindGameObjectWithTag("ForceField");
+        bird = GameObject.FindGameObjectWithTag("Bird").GetComponent<BirdMove>();
 
         itemList.Add(screwdriver);
         itemList.Add(remote);
