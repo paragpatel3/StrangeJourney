@@ -1741,7 +1741,7 @@ public class CanvasToggle : MonoBehaviour {
                 combineList2 = "You unscrew a panel on the toy, and find a Battery inside. You take it.\n [Space to continue]";
                 teddyBear.description = "A toy bear with motion-activated greetings. It is no longer working.";
                 battery.isOwned = true;
-                satisfied = true;
+                satisfied = false;
 
                 firstitem = "";
                 seconditem = "";
@@ -1753,6 +1753,7 @@ public class CanvasToggle : MonoBehaviour {
                 combineSuccess = true;
                 combineList2 = "You put the battery back inside the toy bear.\n [Space to continue]";
                 teddyBear.description = "A toy bear with motion-activated greetings. It seems to be working.";
+                satisfied = true;
 
                 firstitem = "";
                 seconditem = "";
